@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>QR Code Generator</title>
+<meta charset="UTF-8">
+<style type="text/css">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+body{
+
+background:#f1f8ff
+}
+.container{
+position:absolute;
+width:700px;
+box-shadow:5px 5px 7px silver,-5px -5px 7px silver;
+top:25%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+padding:10px;
+border-radius:20px;
+
+
+}
+.container h1{
+font-size:60px;
+color:#f74a8a
+
+}
+#input{
+margin-top:40px;
+margin-bottom:10px;
+width:90%;
+height:80px;
+font-size:40px;
+padding:8px;
+outline:none;
+box-shadow:1px 1px 2px black,-1px -1px 2px black;
+border-radius:15px
+
+
+}
+#input:hover{
+
+box-shadow:2px 2px 8px silver,-2px -2px 8px silver;
+}
+img{
+display:block;
+width:60%;
+margin:40px 140px;
+
+}
+#generateBtn{
+width:400px;
+height:80px;
+font-size:40px;
+font-weight:bold;
+color:#fff;
+background:blue;
+border-radius:10px;
+outline:none;
+margin:40px 0px
+
+
+}
+#generateBtn:active{
+background:rgba(0,0,0,0.5)
+
+}
+span{
+margin-top:10px;
+font-size:35px;
+color:red
+
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>QR Code Generator</h1>
+  
+  <input  type="text" id="input" autocomplete="off" placeholder="Enter Text Or Link"><br>
+  <span id="alert"></span>
+  <img src="https://i.ibb.co/6vL0jGg/download-1.png" id="qrCode">
+  <button id="generateBtn" onclick="generateBtn()">Generate QR Code</button>
+  
+</div>
+
+<div>
+
+
+
+
+<script type="text/javascript">
+var input = document.getElementById("input");
+var qrCode = document.getElementById("qrCode");
+var alert = document.getElementById("alert");
+
+
+
+function generateBtn(){
+
+if(input.value==""){
+
+alert.innerHTML="Please Enter Any Text Or Link...!";
+input.style.boxShadow="1px 1px 2px red,-1px -1px 2px red"
+
+}
+
+else{
+qrCode.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+input.value;
+alert.innerHTML="";
+input.style.boxShadow="1px 1px 2px black,-1px -1px 2px black"
+}
+
+}
+
+
+function button(){
+alert()
+
+}
+
+
+</script>
+</body>
+</html>
